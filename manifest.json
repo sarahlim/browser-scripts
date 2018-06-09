@@ -4,13 +4,16 @@
   "description": "extensions to browsing",
   "version": "0.1",
   "background": {
-    "scripts": [],
-    "persistent": false
+    "scripts": []
   },
   "content_scripts": [
     {
       "matches": ["*://*.github.com/*"],
       "js": ["src/github.content.js"]
+    },
+    {
+      "matches": ["*://*.nytimes.com/crosswords/game/sudoku/*"],
+      "js": ["src/sudoku.content.js"]
     }
   ],
   "content_security_policy": "script-src 'self' https://unpkg.com; object-src 'self'",
